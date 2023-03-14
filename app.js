@@ -55,6 +55,7 @@ app.post("/clear",(req,res)=>{
 	budgetDetails.balance=0;
 	budgetDetails.expenseName=[];
 	budgetDetails.expensePrice=[];
+	budgetDetails.statement="";
 	res.redirect("/");
 })
 app.listen(3000,()=>{
