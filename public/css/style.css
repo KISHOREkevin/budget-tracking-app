@@ -1,0 +1,36 @@
+.totalBudgetSection{
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	background: #e0e0e0;
+	box-shadow:  9px 9px 9px #afafaf,
+             -9px -9px 9px #ffffff;
+	padding: 2%;
+	margin: .0%;
+	
+}
+.budgetTrackingSection{
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	background: #e0e0e0;
+	box-shadow:  9px 9px 9px #afafaf;
+	padding: 2%;
+	
+}
+.trackingSection{
+	margin: 3% 0;
+	box-shadow:  9px 9px 9px #afafaf,
+             -9px -9px 9px #ffffff;
+    background-color: #0069D9;
+    color: white;
+    padding: 2%;
+    border-radius: 5px;
+}
+.expenseList{
+	box-shadow:  9px 9px 9px #afafaf,
+             -9px -9px 9px #ffffff;
+
+}
+.statement{
+	margin-top: 2%;
+	color: red;
+}

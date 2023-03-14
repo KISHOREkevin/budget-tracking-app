@@ -1,0 +1,63 @@
+<%- include("partials/header") %>
+<div class="container">
+	<p class="h1 text-center">Budget Tracking App</p>
+	<div class="row">
+			<div class="totalBudgetSection embed-responsive col-lg-6 col-md-6 col-sm-12">
+				<form action="/totalBudget" method="post">
+					<label for="totalBudget">Enter your budget :</label><br>
+					<input type="number" name="totalBudget" class="form-control" required><br>
+					<button type="submit" class="btn btn-block btn-primary">Submit</button>
+				</form>
+			</div>
+	<div class="budgetTrackingSection embed-responsive col-lg-6 col-md-6 col-sm-12">
+			<form action="/expenseList" method="post">
+				<label for="expenseName">Enter the expense name :</label><br>
+				<input type="text" name="expenseName" class="form-control" autocomplete="off" required><br>
+				<label for="expensePrice">Enter the price :</label><br>
+				<input type="number" name="expensePrice" class="form-control" required><br>
+				<button type="submit" class="btn btn-block btn-primary">Submit</button>
+
+			</form>
+		</div>
+	</div>
+	<div class="statement">
+		<p class="h5 text-center"><%=statement%></p>
+	</div>
+	<div class="trackingSection">
+		<div class="row">
+			<div class="col-lg-4 col-sm-12 col-md-4 text-center">
+				<p class="h5">Total Budget :</p>
+				<p class="h5"><%=totalBudget%></p>
+			</div>
+			<div class="col-lg-4 col-sm-12 col-md-4 text-center">
+				<p class="h5">Expense : </p>
+				<p class="h5"><%=expense%></p>
+			</div>
+			<div class="col-lg-4 col-sm-12 col-md-4 text-center">
+				<p class="h5">Balance :</p>
+				<p class="h5"><%=balance%></p>
+			</div>
+		</div>
+	</div>
+		
+		<div class="expenseList">
+			<table class="table table-bordered">
+				<tr>
+					<th>Expense name</th>
+					<th>Expense price</th>
+				</tr>
+			<%for (var i = 0; i < expenseNames.length; i++) {%>
+				<tr>
+					<td><%=expenseNames[i]%></td>
+					<td>&#8377 <%=expensePrices[i]%></td>
+				</tr>
+			<% } %>
+
+			</table>
+		</div>
+		<form action="/clear" method="post">
+			<button type="submit" class="btn btn-primary">Clear All</button>
+		</form>
+
+</div>
+<%- include("partials/footer") %>
